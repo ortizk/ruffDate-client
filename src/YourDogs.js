@@ -16,7 +16,7 @@ class YourDogs extends Component {
 				
 					return (
 						<div className="yourDogCard"key={dog._id}>
-							<img src="../public/dogImagePlaceHolder.png" alt="paw" />
+							<img src="https://imgur.com/RmFRG4Z" alt="paw" />
 						    <p><strong>{dog.dogName}</strong></p>
 							<p>{dog.breed}</p>
 							<p>{dog.age}</p>

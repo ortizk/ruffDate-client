@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import DogDisplay from './DogDisplay';
+import { SERVER_URL } from './constants'
 
 	
 class Search extends Component {
@@ -18,7 +19,7 @@ class Search extends Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault();
-		axios.post('/getdogsnearby', {zip: this.state.zip})
+		axios.post(SERVER_URL + '/getdogsnearby', {zip: this.state.zip})
 		.then(res => {
 			console.log('result data nearby dogs', res.data);
 			console.log('Success from handleSubmit in Search', res.data);

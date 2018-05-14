@@ -8,6 +8,7 @@ import Login from './auth/Login';
 import Nav from './layout/Nav';
 import Profile from './Profile';
 import Signup from './auth/Signup';
+import { SERVER_URL } from './constants'
 
 class App extends Component {
   constructor(props){
@@ -31,7 +32,7 @@ class App extends Component {
     // if there is a token in localStorage try to elevate it
     if(token){
       console.log('token found in ls', token);
-      axios.post('/auth/me/from/token', {
+      axios.post(SERVER_URL + '/auth/me/from/token', {
         headers: { 'Authorization': `Bearer ${token}` },
         token: token
       })

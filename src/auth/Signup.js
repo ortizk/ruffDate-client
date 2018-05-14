@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
+import { SERVER_URL } from '../constants'
 
 class Signup extends Component {
 	constructor(props){
@@ -50,7 +51,7 @@ class Signup extends Component {
 		//THIS IS WERE WE CONNECT THE BACKEND
 		// this route matches the router auth route on the backend
 		// for axios, the first parameter is where we want to go, and the second is what the data we want to send
-		axios.post('/auth/signup', this.state)
+		axios.post(SERVER_URL + '/auth/signup', this.state)
 		.then(result => {
 			console.log('SUCCESS', result)
 			// Add the newly received token to LS

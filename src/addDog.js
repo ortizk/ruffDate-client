@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { SERVER_URL } from './constants'
 
 
 class AddDog extends Component {
@@ -38,7 +39,7 @@ class AddDog extends Component {
 		// for axios, the first parameter is where we want to go, and the second is what the data we want to send
 		let user = this.props.user
 		console.log(user);
-		axios.post('/profile', {dog: this.state, user: this.props.user})
+		axios.post(SERVER_URL + '/profile', {dog: this.state, user: this.props.user})
 		.then(result => {
 			console.log('SUCCESS after adding a dog', result.data)
 			this.setState({

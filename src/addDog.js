@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { SERVER_URL } from './constants'
-
+import { Modal, Button } from 'react-materialize';
 
 class AddDog extends Component {
 	constructor(props){
@@ -54,32 +54,38 @@ class AddDog extends Component {
 	}
 	
 	render() {
-		if(this.props.user){
-			return (
-				<div>
-					<h1>Add Your Dog!</h1>
-					<form onSubmit={this.handleSubmit}>
-						<div>
-							<input name="dogName" placeholder="what is your dogs name?" value={this.state.dogName} onChange={this.handleDogNameChange} />
-						</div>
-						<div>
-							<input name="breed" placeholder="breed" value={this.state.breed} onChange={this.handleBreedChange} />
-						</div>
-						<div>
-							<select name="temperament" value={this.state.temperament} onChange={this.handleTemperamentChange}>
-								<option value="opt1">Lovely Lil Pup</option>
-								<option value="opt2">Will eat your face off</option>
-								<option value="opt3">Somewhere in between</option>
-							</select>
-						</div>
-						<div>
-							<input name="age" placeholder="Age" value={this.state.age} onChange={this.handleAgeChange} />
-						</div>
-						<input type="submit" value="Add My Dog!" className="button" />
-					</form>
-				</div>
-				);
-			}
+ 		if(this.props.user){
+				return (
+					<div className='add-dog center'>
+						<Modal
+				  			header='Add Your Dog'
+				  			trigger={<Button>Add Your Dog</Button>}>
+							<div>
+								<h1>Add Your Dog!</h1>
+								<form onSubmit={this.handleSubmit}>
+									<div>
+										<input name="dogName" placeholder="what is your dogs name?" value={this.state.dogName} onChange={this.handleDogNameChange} />
+									</div>
+									<div>
+										<input name="breed" placeholder="breed" value={this.state.breed} onChange={this.handleBreedChange} />
+									</div>
+									<div>
+										<select name="temperament" value={this.state.temperament} onChange={this.handleTemperamentChange}>
+											<option value="opt1">Lovely Lil Pup</option>
+											<option value="opt2">Will eat your face off</option>
+											<option value="opt3">Somewhere in between</option>
+										</select>
+									</div>
+									<div>
+										<input name="age" placeholder="Age" value={this.state.age} onChange={this.handleAgeChange} />
+									</div>
+									<input type="submit" value="Add My Dog!" className="button" />
+								</form>
+							</div>
+						</Modal>
+					</div>
+					);
+				}
 		return(
 			<div>
 				<p><a href="/login">Log In</a> to add a dog</p>

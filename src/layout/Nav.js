@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Navbar, NavItem } from 'react-materialize';
+import dogImage from '../images/logo.png';
 
 class Nav extends Component {
 	handleLogout = (e) => {
@@ -12,10 +13,6 @@ class Nav extends Component {
 	}
 
 	render() {
-		<Navbar brand='/images/logo.png' left>
-			<NavItem href='get-started.html'>Getting started</NavItem>
-			<NavItem href='components.html'>Components</NavItem>
-		</Navbar>
 		let links = '';
 		if(this.props.user){
 			links = (
@@ -37,8 +34,11 @@ class Nav extends Component {
 		return(
 			<div>
 				<nav className="nav">
-					<Link to="/">Home</Link>
-					{links}
+					<img className='nav-logo' src={dogImage} alt='dog logo' />
+					<span>
+						<Link to="/">Home</Link>
+						{links}
+					</span>
 				</nav>
 
 			</div>

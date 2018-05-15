@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import dogImage from './images/logo.png';
 // import { Card, CardTitle, Col } from 'react-materialize'  
 
 // Paw by Anton Gajdosik from the Noun Project
@@ -15,21 +16,25 @@ class YourDogs extends Component {
 			displayDogs = usersDogs.map(dog =>{
 				
 					return (
-						<div className="yourDogCard"key={dog._id}>
-							<img src="https://imgur.com/RmFRG4Z" alt="paw" />
-						    <p><strong>{dog.dogName}</strong></p>
-							<p>{dog.breed}</p>
-							<p>{dog.age}</p>
-
+					<div className="yourDogCard col s12 m4 z-depth-3 center" key={dog._id}>
+						<div className='your-doggo-frame'>
+							<img className='your-doggo' src={dogImage} alt="paw" />
 						</div>
-					);
+					    <p><strong>{dog.dogName}</strong></p>
+						<p>{dog.breed}</p>
+						<p>{dog.age}</p>
+
+					</div>
+				);
 				
 			});
 		}
 
 		return (
-			<div>
-				{displayDogs}
+			<div className='row'>
+				<div className='doggo-display col s12 m10 offset-m1'>
+					{displayDogs}
+				</div>
 			</div>
 		)
 	}

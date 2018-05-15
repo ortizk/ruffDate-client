@@ -17,5 +17,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://ruffdate.herokuapp.com"
+  "proxy": "https://ruffdate-server.herokuapp.com"
 }

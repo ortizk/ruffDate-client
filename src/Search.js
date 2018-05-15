@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import DogDisplay from './DogDisplay';
 import { SERVER_URL } from './constants'
-
+import dogImage from './images/logo.png';
 	
 class Search extends Component {
 	constructor(props){
@@ -44,27 +44,38 @@ class Search extends Component {
 			results = this.state.users.map(user =>{
 				
 					return (
-						<div key={user.id}>
-							<strong><p>{user.name}</p></strong>
-							<p>{user.email}</p>
-							<p>their dogs are:</p>
-							<DogDisplay dogs={user.dogs} owner={user.name} />
-							<hr />
+						<div className="yourDogCard col s12 m3 offset-m1 z-depth-3 center" key={user.id}>
+							<div className='your-doggo-frame'>
+								<img className='your-doggo' src={dogImage} alt="paw" />
+							</div>
+							<div className='owner-dog-info'>
+								<strong><p>Owner: {user.name}</p></strong>
+								<p>Contact: {user.email}</p>
+								<p>Their dogs are:</p>
+								<DogDisplay dogs={user.dogs} owner={user.name} />
+							</div>
 						</div>
 					);
 				
 			});
 		}
 		return(
-			<div>
+			<div className='this-is-the-Search-div center row'>
 				<form onSubmit={this.handleSubmit}>
-					<div>
+					<div className='col s12 m8 offset-m2 searchform'>
 						<input name="Zip" placeholder="Zip" value={this.state.zip} onChange={this.handleZipChange} />
 					</div>
-					<input type="submit" value="Find Dogs!" className="button" />
+					<br />
+					<br />
+					<br />
+					<br />
+					<br />
+					<input type="submit" value="Find Dogs!" className="btn waves-effect waves-light searchbutton" />
 				</form>
-				<div>
-					{results}
+				<div className='row'>
+					<div className='doggo-display results col s12 m8 offset-m1'>
+						{results}
+					</div>
 				</div>
 			</div>
 		);

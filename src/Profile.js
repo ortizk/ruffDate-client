@@ -16,12 +16,11 @@ class Profile extends Component {
 						
 			// }
 			return (
-				<div>
-					<h1>Hello again, {this.props.user.name}!</h1>
-					<h3>Your email is {this.props.user.email}</h3>
+				<div className="profileWelcome">
+					<h1 className='center'>Hello again, <span className='usersName'>{this.props.user.name}</span>!</h1>
 					{ this.props.dogs.length > 0 ? <YourDogs dogs={this.props.dogs} /> : <p>You don't have any dogs yet</p> }
 					<AddDog reFetchData={this.props.reFetchData} user={this.props.user} />
-					<h1>Search For Pups In Your Area</h1>
+					<h1 className='search-header'>Search For Pups In Your Area</h1>
 					<Search currentUser={this.props.user} />
 				</div>
 			);

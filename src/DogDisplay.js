@@ -6,7 +6,7 @@ class DogDisplay extends Component {
 		let dogs = this.props.dogs || [];
 		dogs = dogs.map((d, i) => {
 			return (
-				<div key={i}>My name is {d.dogName} and my owner is {this.props.owner}</div>
+				<div key={i}>{d.dogName}</div>
 				);
 		});
 		return(

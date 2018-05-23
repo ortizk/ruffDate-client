@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
-import { SERVER_URL } from '../constants'
 
 class Login extends Component {
 	constructor(props){
@@ -44,16 +43,16 @@ class Login extends Component {
 			return (<Redirect to="/profile" />);
 		}
 		return(
-			<div>
-				<h1>Login as an existing user</h1>
-				<form onSubmit={this.handleSubmit}>
+			<div className='login center row'>
+				<h1><span className="usersName">LogIn</span><br />as an existing user</h1>
+				<form className="auth-form center row" onSubmit={this.handleSubmit}>
 					<div>
-						<input name="Email" placeholder="what is your email?" value={this.state.email} onChange={this.handleEmailChange} />
+						<input name="Email" placeholder="Email?" value={this.state.email} onChange={this.handleEmailChange} />
 					</div>
 					<div>
-						<input name="Password" type="password" value={this.state.password} onChange={this.handlePasswordChange} />
+						<input name="Password" placeholder="Password" type="password" value={this.state.password} onChange={this.handlePasswordChange} />
 					</div>
-					<input type="submit" value="Log Me In" className="button" />
+					<input type="submit" value="Log Me In" className="btn waves-effect waves-light searchbutton" />
 				</form>
 			</div>
 		);

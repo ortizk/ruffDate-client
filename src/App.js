@@ -35,7 +35,7 @@ class App extends Component {
       axios.post(SERVER_URL + '/auth/me/from/token', {
         headers: { 
           'Authorization': `Bearer ${token}`
-         },
+           },
         token: token
       })
       .then(response => {

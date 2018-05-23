@@ -12,7 +12,7 @@ class Home extends Component {
 					<br/>
 					<h4>Find dogs in your area for walks and park visits!</h4>
 					<h4>Log in to find the right puppy friend for your dog</h4>
-					<div className='search-now'><Link to="/login" className='btn waves-effect light-effect'>SEARCH NOW</Link></div>
+					<div className='search-now'><Link to="/login" className='btn waves-effect light-effect'>SEARCH</Link></div>
 				</div>
 			</div>
 		);

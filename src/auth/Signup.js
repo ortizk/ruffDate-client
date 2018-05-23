@@ -70,24 +70,19 @@ class Signup extends Component {
 			return (<Redirect to="/profile" />);
 		}
 		return(
-			<div>
-				<h1>Signup as a new user</h1>
-				<form onSubmit={this.handleSubmit}>
+			<div className='login center row'>
+				<h1><span className="usersName">Signup</span><br />as a new user</h1>
+				<form className="auth-form center row" onSubmit={this.handleSubmit}>
 					<div>
-						<input name="Name" placeholder="what is your name?" value={this.state.name} onChange={this.handleNameChange} />
+						<input name="Name" placeholder="Name" value={this.state.name} onChange={this.handleNameChange} />
 					</div>
 					<div>
-						<input name="Email" placeholder="what is your email?" value={this.state.email} onChange={this.handleEmailChange} />
+						<input name="Email" placeholder="Email" value={this.state.email} onChange={this.handleEmailChange} />
 					</div>
 					<div>
 						<input name="Password" placeholder="Password"type="password" value={this.state.password} onChange={this.handlePasswordChange} />
 					</div>
-					<div>
-						<input name="Addess" placeholder="Address" value={this.state.address} onChange={this.handleAddressChange} />
-					</div>
-					<div>
-						<input name="City" placeholder="City" value={this.state.city} onChange={this.handleCityChange} />
-					</div>
+
 					<div>
 						<select name="state" value={this.state.state} onChange={this.handleStateChange}>
 							<option value="">Select State</option>
@@ -147,7 +142,7 @@ class Signup extends Component {
 					<div>
 						<input name="Zip" placeholder="Zip" value={this.state.zip} onChange={this.handleZipChange} />
 					</div>
-					<input type="submit" value="Sign Me Up!" className="button" />
+					<input type="submit" value="Sign Me Up!" className="btn waves-effect waves-light searchbutton" />
 				</form>
 			</div>
 		);

@@ -6,6 +6,14 @@ font-family: 'Unica One', cursive;
 font-family: 'Pacifico', cursive;
 
 */
+.login {
+  background-color: rgba(255,255,255,0.5);
+  width: 50%;
+  border-radius: 20px;
+}
+.auth-form {
+  width: 75%;
+}
 
 .App {
   /*background-color: orange;*/
@@ -48,6 +56,7 @@ body {
   background-color: white;
   height: auto;
   padding-bottom: 20px;
+  margin: 0 auto;
 }
 
 .results .yourDogCard  {
@@ -113,6 +122,10 @@ nav a:hover {
 .btn {
   background-color: #FF6140!important;
 }
+/*add dog button className*/
+.red {
+  /*float: left!important;*/
+}
 
 .footer {
   background-color: #80cbc4;
@@ -174,6 +187,7 @@ nav a:hover {
 .yourDogCard {
   background-color: rgba(255,255,255,0.7);
   border-radius: 10%;
+  margin-bottom: 40px;
   /*margin: 30px;*/
 }
 /*DEFAULT STYLES*/

@@ -59,9 +59,8 @@ class AddDog extends Component {
 					<div className='add-dog center'>
 						<Modal
 				  			header='Add Your Dog'
-				  			trigger={<Button>Add Your Dog</Button>}>
+				  			trigger={<Button floating large className='red' waves='light' icon='add' />}>
 							<div>
-								<h1>Add Your Dog!</h1>
 								<form onSubmit={this.handleSubmit}>
 									<div>
 										<input name="dogName" placeholder="what is your dogs name?" value={this.state.dogName} onChange={this.handleDogNameChange} />
@@ -79,7 +78,7 @@ class AddDog extends Component {
 									<div>
 										<input name="age" placeholder="Age" value={this.state.age} onChange={this.handleAgeChange} />
 									</div>
-									<input type="submit" value="Add My Dog!" className="button" />
+									<input type="submit" value="Add My Dog!" className="btn" />
 								</form>
 							</div>
 						</Modal>

@@ -1,1 +1,1 @@
-module.exports.SERVER_URL = 'https://ruffdate-server.herokuapp.com';
+module.exports.SERVER_URL = 'https://ruffdate.herokuapp.com';

@@ -33,7 +33,9 @@ class App extends Component {
     if(token){
       console.log('token found in ls', token);
       axios.post(SERVER_URL + '/auth/me/from/token', {
-        headers: { 'Authorization': `Bearer ${token}` },
+        headers: { 
+          'Authorization': `Bearer ${token}`
+         },
         token: token
       })
       .then(response => {

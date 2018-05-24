@@ -67,7 +67,7 @@ class App extends Component {
   }
 
   refetchData = () =>{
-    axios.get(SERVER_URL + `/profile/${this.state.user.id}`)
+    axios.get(SERVER_URL + '/profile/' + this.state.user.id)
     .then(res => {
       // const results = res.data;
       console.log('Success refetch:', res.data);

@@ -15,8 +15,8 @@ class YourDogs extends Component {
 		if (usersDogs !== null) {
 			displayDogs = usersDogs.map(dog =>{
 				
-					return (
-					<div className="yourDogCard col s12 m4 z-depth-3 center" key={dog._id}>
+				return (
+					<div className="yourDogCard col s12 m3 offset-m2 z-depth-3 center" key={dog._id}>
 						<div className='your-doggo-frame'>
 							<img className='your-doggo' src={dogImage} alt="paw" />
 						</div>
@@ -32,7 +32,10 @@ class YourDogs extends Component {
 
 		return (
 			<div className='row'>
-				<div className='doggo-display col s12 m10 offset-m1'>
+				<div className='doggo-display col s12 m10 offset-m1 '>
+					<h3 className="usersName center">Your Dogs</h3>
+					<br />
+					<br />
 					{displayDogs}
 				</div>
 			</div>

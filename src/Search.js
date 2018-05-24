@@ -44,7 +44,7 @@ class Search extends Component {
 			results = this.state.users.map(user =>{
 				
 					return (
-						<div className="yourDogCard col s12 m3 offset-m1 z-depth-3 center" key={user.id}>
+						<div className="yourDogCard col s12 m3 offset-m2 z-depth-3 center" key={user.id}>
 							<div className='your-doggo-frame'>
 								<img className='your-doggo' src={dogImage} alt="paw" />
 							</div>
@@ -73,7 +73,7 @@ class Search extends Component {
 					<input type="submit" value="Find Dogs!" className="btn waves-effect waves-light searchbutton" />
 				</form>
 				<div className='row'>
-					<div className='doggo-display results col s12 m8 offset-m1'>
+					<div className='doggo-display results col s12 m6 offset-m3'>
 						{results}
 					</div>
 				</div>

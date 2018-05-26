@@ -9,6 +9,8 @@ class YourDogs extends Component {
 		super(props);
 	}
 
+	onClick() 
+
 	render() {
 		let displayDogs
 		let usersDogs = Array.from(this.props.dogs) 
@@ -23,6 +25,7 @@ class YourDogs extends Component {
 					    <p><strong>{dog.dogName}</strong></p>
 						<p>{dog.breed}</p>
 						<p>{dog.age}</p>
+						<Button floating className='red' waves='light' icon='delete' />
 
 					</div>
 				);

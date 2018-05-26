@@ -18,7 +18,7 @@ class Profile extends Component {
 			return (
 				<div className="profileWelcome">
 					<h1 className='center'>Hello again, <span className='usersName'>{this.props.user.name}</span>!</h1>
-					{ this.props.dogs.length > 0 ? <YourDogs dogs={this.props.dogs} /> : <p><span className="usersName center row">You don't have any dogs yet</span></p> }
+					{ this.props.dogs.length > 0 ? <YourDogs dogs={this.props.dogs} /> : <p><div className="usersName center row">You don't have any dogs yet</div></p> }
 					<AddDog reFetchData={this.props.reFetchData} user={this.props.user} />
 					<h1 className='search-header'>Search For Pups In Your Area</h1>
 					<Search currentUser={this.props.user} />

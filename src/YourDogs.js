@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import dogImage from './images/logo.png';
-import { Button } from 'react-materialize';
+// import { Button } from 'react-materialize';
 // import { Card, CardTitle, Col } from 'react-materialize'  
 
 // Paw by Anton Gajdosik from the Noun Project
@@ -26,7 +26,7 @@ class YourDogs extends Component {
 					    <p><strong>{dog.dogName}</strong></p>
 						<p>{dog.breed}</p>
 						<p>{dog.age}</p>
-						<Button floating className='red' waves='light' icon='delete' />
+						<button className='red'>Delete</button>
 
 					</div>
 				);

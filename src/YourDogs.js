@@ -8,6 +8,7 @@ import { Button } from 'react-materialize';
 class YourDogs extends Component {
 	constructor(props){
 		super(props);
+		this.state = {
 			dogid: '',
 			userid: ''
 		}

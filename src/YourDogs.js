@@ -22,19 +22,19 @@ class YourDogs extends Component {
 		console.log(this.state)
 	}
 
-	handleDelete = (dogid, userid) => {
-		console.log('THIS IS THE DOGID', dogid)
-		console.log('THIS IS THE USERID', userid)
-		console.log('this is the state', this.state.dog)
-		axios.delete('http://localhost:3001/deletedog', { data: { dogid: dogid, userid: userid }})
-		.then(res => {
-			console.log(res)
-			console.log('success, deleted dog');
-			console.log(res.data)
-		})
-		.catch(function (err) {
-			console.log('error from delete method:', err)
-		})
+	// handleDelete = (dogid, userid) => {
+	// 	console.log('THIS IS THE DOGID', dogid)
+	// 	console.log('THIS IS THE USERID', userid)
+	// 	console.log('this is the state', this.state.dog)
+	// 	axios.delete('http://localhost:3001/deletedog', { data: { dogid: dogid, userid: userid }})
+	// 	.then(res => {
+	// 		console.log(res)
+	// 		console.log('success, deleted dog');
+	// 		console.log(res.data)
+	// 	})
+	// 	.catch(function (err) {
+	// 		console.log('error from delete method:', err)
+	// 	})
 	}
 
 	render() {
@@ -51,7 +51,6 @@ class YourDogs extends Component {
 					    <p><strong>{dog.dogName}</strong></p>
 						<p>{dog.breed}</p>
 						<p>{dog.age}</p>
-						<Button floating className='red' waves='light' icon='delete' onClick={() => this.handleDelete(dog._id, this.props.user.id)}/>
 					</div>
 				);
 				

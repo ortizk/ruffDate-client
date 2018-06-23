@@ -15,7 +15,6 @@ class YourDogs extends Component {
 	}
 
 	componentDidMount(){
-		console.log('props and shit', this.props.user.id)
 		this.setState({
 			userid: this.props.user.id
 		})
@@ -35,7 +34,7 @@ class YourDogs extends Component {
 	// 	.catch(function (err) {
 	// 		console.log('error from delete method:', err)
 	// 	})
-	}
+	// }
 
 	render() {
 		let displayDogs

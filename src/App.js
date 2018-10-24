@@ -8,7 +8,7 @@ import Login from './auth/Login';
 import Nav from './layout/Nav';
 import Profile from './Profile';
 import Signup from './auth/Signup';
-import { SERVER_URL } from './constants'
+import { SERVER_URL } from './constants';
 
 class App extends Component {
   constructor(props){

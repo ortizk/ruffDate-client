@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import { SERVER_URL } from '../constants';
+import { withAlert } from 'react-alert';
+import Alert from '../alerts/Alert';
 
 
 class Login extends Component {
@@ -54,11 +56,13 @@ class Login extends Component {
 					<div>
 						<input name="Password" placeholder="Password" type="password" value={this.state.password} onChange={this.handlePasswordChange} />
 					</div>
-					<input type="submit" value="Log Me In" className="btn waves-effect waves-light searchbutton" />
+					<input type="submit" value="Log Me In" onClick={() => {
+						this.props.alert.show('OH WOW, this is an alert!')
+					}} className="btn waves-effect waves-light searchbutton" />
 				</form>
 			</div>
 		);
 	}
 }
 
-export default Login;
+export default withAlert(Login);

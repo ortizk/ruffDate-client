@@ -38,7 +38,8 @@ class Login extends Component {
 			this.props.updateUser();
 		})
 		.catch(err => {
-			console.log('ERROR', err.response ? err.response.data : err);
+			// console.log('ERROR', err.response ? err.response.data : err);
+			console.log(this.props);
 		});
 	}
 
@@ -56,9 +57,7 @@ class Login extends Component {
 					<div>
 						<input name="Password" placeholder="Password" type="password" value={this.state.password} onChange={this.handlePasswordChange} />
 					</div>
-					<input type="submit" value="Log Me In" onClick={() => {
-						this.props.alert.show('OH WOW, this is an alert!')
-					}} className="btn waves-effect waves-light searchbutton" />
+					<input type="submit" value="Log Me In" className="btn waves-effect waves-light searchbutton" />
 				</form>
 			</div>
 		);

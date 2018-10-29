@@ -37,7 +37,7 @@ class Search extends Component {
 		// axios?
 
 	render() {
-		let currentUser = this.props.user 
+		// let currentUser = this.props.user 
 		console.log('matched users', this.state.users)
 		let results 
 		if (this.state.users !== null) {

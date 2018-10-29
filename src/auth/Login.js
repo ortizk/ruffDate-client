@@ -25,7 +25,7 @@ class Login extends Component {
 	handleSubmit = (e) => {
 		e.preventDefault();
 		console.log('form was submitted', this.state);
-		//THIS IS WERE WE CONNECT THE BACKEND
+		//THIS IS WHERE WE CONNECT THE BACKEND
 		// this route matches the router auth route on the backend
 		// for axios, the first parameter is where we want to go, and the second is what the data we want to send
 		axios.post(SERVER_URL + '/auth/login', this.state)
@@ -38,6 +38,12 @@ class Login extends Component {
 		})
 		.catch(err => {
 			// console.log('ERROR', err.response ? err.response.data : err);
+			const alert = this.props.alert.show('hmmmm, not what we were expecting. Please try again.', {
+			timeout: 2500 , // custom timeout just for this one alert
+			type: 'success',
+			onOpen: () => { console.log('hey') }, // callback that will be executed after this alert open
+			onClose: () => { console.log('closed') } // callback that will be executed after this alert is removed
+})
 			console.log(this.props);
 		});
 	}
@@ -45,16 +51,10 @@ class Login extends Component {
 	render() {
 		if(this.props.user){
 			return (<Redirect to="/profile" />);
-		}
+		} 
 		return(
 			<div className='login center row'>
 				<h1><span className="usersName">LogIn</span><br />as an existing user</h1>
-				<button onClick={() => {
-			          this.props.alert.show('Oh look, an alert!')
-			        }}
-			      >
-			        Show Alert
-			      </button>
 				<form className="auth-form center row" onSubmit={this.handleSubmit}>
 					<div>
 						<input name="Email" placeholder="Email?" value={this.state.email} onChange={this.handleEmailChange} />

@@ -21,17 +21,14 @@ class App extends Component {
 
   componentDidMount = () => {
     //the loading of this component happened correctly
-    console.log('component did mount!');
     this.getUser();
   }
 
 
   getUser = () => {
-    console.log('get user');
     var token = localStorage.getItem('mernToken');
     // if there is a token in localStorage try to elevate it
     if(token){
-      console.log('token found in ls', token);
       axios.post(SERVER_URL + '/auth/me/from/token', {
         headers: { 
           'Authorization': `Bearer ${token}`
@@ -58,7 +55,6 @@ class App extends Component {
       });
     }
     else {
-      console.log('No token was found');
       localStorage.removeItem('mernToken');
       this.setState({
         user: null

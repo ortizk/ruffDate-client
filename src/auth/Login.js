@@ -3,7 +3,6 @@ import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 import { SERVER_URL } from '../constants';
 import { withAlert } from 'react-alert';
-import Alert from '../alerts/Alert';
 
 
 class Login extends Component {
@@ -50,6 +49,12 @@ class Login extends Component {
 		return(
 			<div className='login center row'>
 				<h1><span className="usersName">LogIn</span><br />as an existing user</h1>
+				<button onClick={() => {
+			          this.props.alert.show('Oh look, an alert!')
+			        }}
+			      >
+			        Show Alert
+			      </button>
 				<form className="auth-form center row" onSubmit={this.handleSubmit}>
 					<div>
 						<input name="Email" placeholder="Email?" value={this.state.email} onChange={this.handleEmailChange} />

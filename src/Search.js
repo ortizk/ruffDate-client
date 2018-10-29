@@ -38,6 +38,7 @@ class Search extends Component {
 
 	render() {
 		// let currentUser = this.props.user 
+		console.log('matched users', this.state.users)
 		let results 
 		if (this.state.users !== null) {
 			results = this.state.users.map(user =>{

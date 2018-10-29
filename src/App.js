@@ -8,7 +8,7 @@ import Login from './auth/Login';
 import Nav from './layout/Nav';
 import Profile from './Profile';
 import Signup from './auth/Signup';
-import { SERVER_URL } from './constants'
+import { SERVER_URL } from './constants';
 
 class App extends Component {
   constructor(props){
@@ -53,7 +53,6 @@ class App extends Component {
       });
     }
     else {
-      console.log('No token was found');
       localStorage.removeItem('mernToken');
       this.setState({
         user: null
@@ -79,7 +78,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
         <Router>
           <div >
             <Nav user={this.state.user} updateUser={this.getUser}/>

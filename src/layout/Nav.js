@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, NavItem } from 'react-materialize';
+// import { Navbar, NavItem } from 'react-materialize';
 import dogImage from '../images/logo.png';
 
 class Nav extends Component {

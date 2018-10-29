@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import dogImage from './images/logo.png';
-import { Button } from 'react-materialize';
+// import { Button } from 'react-materialize';
 // import { Card, CardTitle, Col } from 'react-materialize'  
 
 // Paw by Anton Gajdosik from the Noun Project

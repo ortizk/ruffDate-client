@@ -21,25 +21,20 @@ class App extends Component {
 
   componentDidMount = () => {
     //the loading of this component happened correctly
-    console.log('component did mount!');
     this.getUser();
   }
 
 
   getUser = () => {
-    console.log('get user');
     var token = localStorage.getItem('mernToken');
     // if there is a token in localStorage try to elevate it
     if(token){
-      console.log('token found in ls', token);
       axios.post(SERVER_URL + '/auth/me/from/token', {
         headers: { 
           'Authorization': `Bearer ${token}`
-           },
-        token: token
+        },
       })
       .then(response => {
-        console.log('SUCCESS getting user', response.data);
         this.setState({
           user: response.data.user,
           dogs: response.data.user.dogs
@@ -67,7 +62,6 @@ class App extends Component {
   }
 
   refetchData = () =>{
-    console.log('this is the this.state.user.id: ', this.state.user.id)
     axios.get(SERVER_URL + '/profile/' + this.state.user.id)
     .then(res => {
       // const results = res.data;

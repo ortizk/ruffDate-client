@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { SERVER_URL } from './constants'
 import { Modal, Button } from 'react-materialize';
+import {Image, Transformation, CloudinaryContext} from 'cloudinary-react';
+
 
 class AddDog extends Component {
 	constructor(props){
@@ -11,7 +13,8 @@ class AddDog extends Component {
 			breed: '',
 			temperament: '',
 			age: '',
-			dog: ''
+			dog: '',
+			img: null
 		};
 	}
 
@@ -31,14 +34,17 @@ class AddDog extends Component {
 		this.setState({ age: e.target.value});
 	}
 
+	fileSelectedHandler = (e) => {
+		this.setState({ img: e.target.files[0]});
+	}
+
 	handleSubmit = (e) => {
 		e.preventDefault();
-		console.log('add dog form was submitted', this.state, this.props.user);
 		//THIS IS WERE WE CONNECT THE BACKEND
 		// this route matches the router auth route on the backend
 		// for axios, the first parameter is where we want to go, and the second is what the data we want to send
-		let user = this.props.user
-		console.log(user);
+		// let user = this.props.user
+		
 		axios.post(SERVER_URL + '/profile', {dog: this.state, user: this.props.user})
 		.then(result => {
 			console.log('SUCCESS after adding a dog', result.data)
@@ -78,6 +84,7 @@ class AddDog extends Component {
 									<div>
 										<input name="age" placeholder="Age" value={this.state.age} onChange={this.handleAgeChange} />
 									</div>
+									<input type="file" onChange={this.fileSelectedHandler} />
 									<input type="submit" value="Add My Dog!" className="btn" />
 								</form>
 							</div>

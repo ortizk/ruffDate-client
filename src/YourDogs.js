@@ -41,18 +41,29 @@ class YourDogs extends Component {
 		let usersDogs = Array.from(this.props.dogs) 
 		if (usersDogs !== null) {
 			displayDogs = usersDogs.map(dog =>{
-				
-				return (
-					<div className="yourDogCard col s12 m3 offset-m2 z-depth-3 center" key={dog._id}>
-						<div className='your-doggo-frame'>
-							<img className='your-doggo' src={dogImage} alt="paw" />
+				if(dog.img == ''){
+					return (
+						<div className="yourDogCard col s12 m3 offset-m2 z-depth-3 center" key={dog._id}>
+							<div className='your-doggo-frame'>
+							<img src={dogImage} className='your-doggo' alt="dog face" />   
+							</div>
+						    <p><strong>{dog.dogName}</strong></p>
+							<p>{dog.breed}</p>
+							<p>{dog.age}</p>
 						</div>
-					    <p><strong>{dog.dogName}</strong></p>
-						<p>{dog.breed}</p>
-						<p>{dog.age}</p>
-					</div>
-				);
-				
+					);
+				} else {
+					return (
+						<div className="yourDogCard col s12 m3 offset-m2 z-depth-3 center" key={dog._id}>
+							<div className='your-doggo-frame'>
+							<img src={dog.img} className='your-doggo' alt="dog face" />   
+							</div>
+						    <p><strong>{dog.dogName}</strong></p>
+							<p>{dog.breed}</p>
+							<p>{dog.age}</p>
+						</div>
+					);
+				}
 			});
 		}
 

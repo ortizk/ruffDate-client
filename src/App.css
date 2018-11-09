@@ -173,6 +173,14 @@ nav a:hover {
   position: relative;
 }
 
+.your-doggo-placeholder {
+  width: 90px;
+  height: auto;
+  position: absolute;
+  top: 7px;
+  left: .5px;
+}
+
 .doggo-display {
   margin-top: 20px;
 }

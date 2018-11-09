@@ -144,11 +144,11 @@ nav a:hover {
 
 /*child div to the photo frame*/
 .your-doggo {
-  width: 90px;
+  width: 110px;
   height: auto;
   position: absolute;
-  top: 7px;
-  left: 0.5px;
+  top: .01px;
+  left: -7px;
 }
 
 .nav-logo {
@@ -171,6 +171,14 @@ nav a:hover {
   border: 4px solid black;
   margin: 15px auto;
   position: relative;
+}
+
+.your-doggo-placeholder {
+  width: 90px;
+  height: auto;
+  position: absolute;
+  top: 7px;
+  left: .5px;
 }
 
 .doggo-display {

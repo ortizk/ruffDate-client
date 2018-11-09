@@ -37,8 +37,9 @@ class Search extends Component {
 		// axios?
 
 	render() {
-		// let currentUser = this.props.user 
+		let currentUser = this.props.user 
 		console.log('matched users', this.state.users)
+		console.log('currentUser', this.state.user)
 		let results 
 		if (this.state.users !== null) {
 			results = this.state.users.map(user =>{
@@ -46,7 +47,7 @@ class Search extends Component {
 					return (
 						<div className="yourDogCard col s12 m3 offset-m2 z-depth-3 center" key={user.id}>
 							<div className='your-doggo-frame'>
-								<img className='your-doggo' src={dogImage} alt="paw" />
+								{ user.dogs.img == null ? <img src={dogImage} className='your-doggo-placeholder' alt="dog face" /> : <img src={user.dogs.img} className='your-doggo' alt="dog face" /> }  
 							</div>
 							<div className='owner-dog-info'>
 								<strong><p>Owner: {user.name}</p></strong>

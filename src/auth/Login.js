@@ -38,7 +38,7 @@ class Login extends Component {
 		})
 		.catch(err => {
 			// console.log('ERROR', err.response ? err.response.data : err);
-			const alert = this.props.alert.show('hmmmm, not what we were expecting. Please try again.', {
+			this.props.alert.show('hmmmm, not what we were expecting. Please try again.', {
 			timeout: 2500 , // custom timeout just for this one alert
 			type: 'success',
 			onOpen: () => { console.log('hey') }, // callback that will be executed after this alert open
